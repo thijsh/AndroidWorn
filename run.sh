@@ -1,10 +1,13 @@
 #! /bin/bash
 
+# Store script dir
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 # Perform forensic capture
-./forensic_capture.sh
+$DIR/forensic_capture.sh
 
 # Mount partitions
-./mount_flash.sh
+$DIR/mount_flash.sh
 
 # Perform forensic analysis
-./forensic_analysis.sh
+$DIR/forensic_analysis.sh

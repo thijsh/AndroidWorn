@@ -15,7 +15,7 @@ mactime -b system_timeline.txt -d > system_timeline.csv
 # Run Photorec, move all files to one folder, and generate hashes
 mkdir photorec
 photorec /debug /log /d photorec /cmd flash.img partition_none,options,mode_ext2,fileopt,everything,enable,search
-mv photorec.*/* photorec/
+mv -f photorec.*/* photorec/
 rmdir photorec.*/
 for file in photorec/*; do sha256sum "$file"; done | sort > photorec.sha256
 
